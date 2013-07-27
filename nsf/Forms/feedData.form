@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='feedData' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B8A0052617C'
+ hide='web' publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='166' unid='6FE5AB839FF6CF53C1257A47006CE3B9' sequence='4'>
+<created><datetime dst='true'>20120726T214921,85+02</datetime></created>
+<modified><datetime dst='true'>20130614T173044,65+02</datetime></modified>
+<revised><datetime dst='true'>20120927T154518,01+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130614T173044,65+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173044,65+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<par def='1'/>
+<par def='1'><field type='text' kind='editable' name='xml'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>feedData</text></item></form>
+

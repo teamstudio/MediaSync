@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" dojoParseOnLoad="true"
+	dojoTheme="true">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:loadAppConfig();
+loadUserConfig();}]]></xp:this.beforePageLoad>
+
+	<xp:this.resources>
+		<xp:script src="/base.jss" clientSide="false"></xp:script>
+		<xp:dojoModule name="dijit.form.Button"></xp:dojoModule>
+		<xp:script src="/xProgress.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xc:ccDebugToolbar defaultCollapsed="true" collapseTo="right"></xc:ccDebugToolbar>
+	
+	<div id="wrapper">
+		<div id="container">
+		
+			<div id="top_trans">
+			</div>
+			<div id="main_trans">
+			
+				<div class="right">
+				
+					<xp:link escape="true" text="" id="link3"
+						value="/home.xsp">
+						<xp:image url="/logo.png"
+							id="image1" style="margin-right: 30px" alt="Project Dragonfly"
+							width="300" height="59" title="#{javascript:this.getAlt()}">
+						</xp:image>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete" immediate="true">
+						</xp:eventHandler>
+					</xp:link>
+					<br />
+					
+					<div style="margin-top:15px">
+					
+								<!-- user info -->
+					<xp:text escape="true" id="computedField1">
+						<xp:this.value><![CDATA[#{javascript:@Name("[CN]", sessionScope.get("currentUser"));}]]></xp:this.value>
+					</xp:text><!--
+					&#160;(
+					<xp:link escape="true" text="settings" id="link2"
+						value="/user.xsp">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete" immediate="true">
+						</xp:eventHandler>
+					</xp:link>
+					)
+		
+					--><!--  config link -->
+					<xp:span loaded="${sessionScope.isAdmin}">
+						&#160;|&#160;
+						<xp:link escape="true" text="Configurations" id="link1"							>
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" immediate="true" refreshId="dynamicContent1">
+								<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("configurations")}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</xp:span>
+					
+					<!--  enable debug toolbar -->
+					<xp:span rendered="#{!dBar.enabled}">
+						&#160;|&#160;
+						<xp:link escape="true" text="Enable debug toolbar" id="link7" >
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete" immediate="true">
+								<xp:this.action><![CDATA[#{javascript:dBar.setEnabled(true);}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</xp:span>
+		
+					<!--  logout link -->
+					&#160;|&#160;
+					<xp:link escape="true" text="Logout" id="link4">
+						<xp:this.value><![CDATA[#{javascript:"/names.nsf?logout&redirectTo=/" + database.getFilePath().replace("\\", "/");}]]></xp:this.value>
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete" immediate="true">
+						</xp:eventHandler>
+					</xp:link>
+					
+					</div>
+				</div>
+				
+				<div class="left" id="nav_top" style="margin-left: 15px">
+				
+					<div style="margin-top: 10px">
+					
+						<div style="margin-bottom:10px">
+		
+							<xp:button value="Sync" id="button1" icon="/arrow_refresh.png">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynamicContent1">
+									<xp:this.action><![CDATA[#{javascript:syncBean.sync()}]]></xp:this.action>
+									<xp:this.onStart><![CDATA[xProgress.start();
+										dijit.byId("#{id:button1}").setDisabled(true);]]></xp:this.onStart>
+									<xp:this.onComplete><![CDATA[xProgress.stop();
+									dijit.byId("#{id:button1}").setDisabled(false);]]></xp:this.onComplete>
+								</xp:eventHandler></xp:button>
+								
+						</div>
+					
+						<xp:span id="progress" style="display:none;">
+		
+						<!-- loading image -->
+						<xp:image url="/loading.gif" id="imageLoading"></xp:image>
+		
+						<!--  progress message area -->
+						<span style="padding-left: 15px; color: #444"></span>
+						</xp:span>
+		
+						<xp:scriptBlock id="scriptBlock1">
+							<xp:this.value><![CDATA[dojo.addOnLoad( function() {
+						xProgress.targetNodeId = "#{id:progress}";
+					} );]]></xp:this.value>
+						</xp:scriptBlock>
+					
+					</div>
+						
+				
+				</div>
+				
+				<div class="clear" />
+			
+			</div>
+			<div id="bot_trans">
+			</div>
+		
+			<div id="top_trans_2">
+			</div>
+		
+			<div id="main_trans_2">
+		
+				<div>
+			
+					<xp:div styleClass="lotusMessage lotusWarn">
+						Cannot synchronize with IBM Connections: missing&#160;
+						<xp:this.rendered><![CDATA[#{javascript:!applicationScope.hasGlobalConfig && (view.getPageName().indexOf("config.xsp")==-1)}]]></xp:this.rendered>
+						<xp:link escape="true" text="configuration" id="link5"
+							value="/config.xsp">
+						</xp:link>
+						&#160;settings.
+					</xp:div>
+			
+					<!--<xp:div styleClass="lotusMessage lotusWarn">
+						<xp:this.rendered><![CDATA[#{javascript:(applicationScope.hasGlobalConfig && !sessionScope.hasUserConfig) && view.getPageName().indexOf("user.xsp")==-1}]]></xp:this.rendered>
+						Cannot synchronize with IBM Connections: missing&#160;
+						<xp:link escape="true" text="user settings" id="link6"
+							value="/user.xsp">
+						</xp:link>
+						.
+					</xp:div>
+			
+					--><!-- message area -->
+					<xp:messages id="messages1"></xp:messages>
+			
+					<xp:callback facetName="contents" id="contents"></xp:callback>
+				</div>
+		
+			</div>
+		
+			<div id="bot_trans_2">
+			
+			</div>
+		
+		</div>
+	</div>
+	
+	<xp:scriptBlock id="scriptBlock2">
+
+		<xp:this.value><![CDATA[//supersized
+$(function(){
+	$.supersized({
+		slides : [			
+			{image : "#{applicationScope.dbPath}/dot-com_home__IMG_0336_V3.jpg"}
+		]
+	});
+});]]></xp:this.value>
+	</xp:scriptBlock>
+
+	<!-- increase partial refresh timeouts -->
+	<xp:scriptBlock id="setLatencyBlock">  
+<xp:this.value><![CDATA[XSP.addOnLoad(function() { 
+//increase Ajax request timeout to 600 seconds 
+XSP.submitLatency = 600 * 1000; 
+});]]></xp:this.value>  
+</xp:scriptBlock> 
+	
+</xp:view>

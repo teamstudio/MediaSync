@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<helpaboutdocument xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B8A0052617C'
+ publicaccess='false' designerversion='8.5.3' default='true' renderpassthrough='true'>
+<noteinfo noteid='1ee' unid='4A9B597DC1BD97EBC1257A52004DCB97' sequence='4'>
+<created><datetime dst='true'>20120806T160943,91+02</datetime></created>
+<modified><datetime dst='true'>20130616T101850,20+02</datetime></modified>
+<revised><datetime dst='true'>20130616T101850,19+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130616T101850,20+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,40+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<par def='1'>MediaSync PoC application.</par>
+<par def='1'/>
+<par def='1'>This application contains icons from the free FatCow Farm-Fresh Web Icons set found at <urllink
+ showborder='false' href='http://www.fatcow.com/free-icons'><run><font color='system'/>http://www.fatcow.com/free-icons</run></urllink>.</par></richtext></body></helpaboutdocument>
+

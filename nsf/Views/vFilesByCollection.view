@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='vFilesByCollection' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false' formatnoteid='0FD577B41320D2A6C1257A47006FA834'>
+<noteinfo noteid='1f2' unid='37846669635AC92EC1257A4B00309152' sequence='32'>
+<created><datetime dst='true'>20120730T105029,30+02</datetime></created>
+<modified><datetime dst='true'>20130703T100711,14+02</datetime></modified>
+<revised><datetime dst='true'>20130703T100711,13+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T100711,14+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,43+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form="fFileMetadata" &amp; status != "delete"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='$9' width='5' resizable='true'
+ separatemultiplevalues='true' sortnoaccent='false' sortnocase='true' showaslinks='false'
+ categorized='true' twisties='true'><font size='9pt'/><columnheader title='collectionId'><font
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>@If(
+ isMediaFile = "true"; communityId; author)</formula></code></column>
+<column sort='ascending' hidedetailrows='false' itemname='title' width='16.7500'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><font size='9pt'/><columnheader title='title'><font size='9pt'
+ style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='link' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='link'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='updatedDat' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='updated'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='attachments' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='attachments'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@AttachmentNames</formula></code></column>
+<column hidedetailrows='false' itemname='attachmentSize' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='attachmentSize'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@Sum(@AttachmentLengths)</formula></code></column>
+<column hidedetailrows='false' itemname='status' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='status'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='description' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='description'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='tags' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='tags'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='isPrivate' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='isPrivate'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='isVideo' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='isVideo'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='author' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='9pt'/><columnheader title='author'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='thumbnailFileName' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='thumbnailFileName'><font size='9pt' style='bold'/></columnheader></column></view>
+

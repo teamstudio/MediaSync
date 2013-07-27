@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='vCommunitiesByMember' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='196' unid='2D3525849FEC5BCAC1257A840068059D' sequence='15'>
+<created><datetime dst='true'>20120925T205611,81+02</datetime></created>
+<modified><datetime dst='true'>20130703T100811,10+02</datetime></modified>
+<revised><datetime dst='true'>20130703T100811,09+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T100811,10+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173044,93+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form="fCommunity" &amp; members != ""</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='members' width='10'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true'><columnheader title='members'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='title' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='title'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='description' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='description'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='link' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='link'><font size='9pt' style='bold'/></columnheader></column></view>
+

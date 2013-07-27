@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("returnTo", context.getUrl().toSiteRelativeString(context) );}]]></xp:this.beforePageLoad>
+	
+	<!-- load Dojo resources for the lightbox & video player -->
+	<xp:this.resources>
+		<xp:styleSheet
+			href="/.ibmxspres/dojoroot/dojox/image/resources/Lightbox.css">
+		</xp:styleSheet>
+		<xp:dojoModule name="dojox.image.Lightbox"></xp:dojoModule>
+		<xp:dojoModule name="dijit.Dialog"></xp:dojoModule>
+		<xp:script src="mediaplayer-5.10/jwplayer.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	
+	<xc:ccLayout>
+
+		<xp:this.facets>
+
+			<xe:dynamicContent id="dynamicContent1" xp:key="contents"
+				defaultFacet="folder" useHash="true">
+
+			<xp:this.facets>
+
+					<xc:ccUnpUsers xp:key="unpUsers" />
+					<xc:ccUnpDevices xp:key="unpDevices" />
+					<xc:ccUnpApps xp:key="unpApps" />
+					
+					<xc:ccCommunities xp:key="communities" />
+					<xc:ccFolderContents xp:key="folder" />
+					<xc:ccFile xp:key="file" />
+					<xc:ccConfigurations xp:key="configurations" />
+					<xc:ccConfig xp:key="configuration" />
+				
+				</xp:this.facets>
+				</xe:dynamicContent>
+
+		</xp:this.facets>
+
+	</xc:ccLayout>
+
+</xp:view>

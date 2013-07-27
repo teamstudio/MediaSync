@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='Development\Replace field value' xmlns='http://www.lotus.com/dxl'
+ version='9.0' replicaid='C1257B8A0052617C' hide='web v3' publicaccess='false'
+ designerversion='8.5.2'>
+<noteinfo noteid='1856' unid='02B60BFCFE755F53C1257B9C00501B70' sequence='1'>
+<created><datetime dst='true'>20130702T163459,04+02</datetime></created>
+<modified><datetime dst='true'>20130702T172559,27+02</datetime></modified>
+<revised><datetime dst='true'>20130702T163500,41+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130702T172559,27+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130702T172559,27+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<designchange><datetime>20130329T115737,95+01</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='selected'/><code event='options'><lotusscript>%REM
+	Agent Development\Replace field value
+	Created Jan 13, 2011 by Domino Administrator/LinQed
+	Description: Comments for Agent
+%END REM
+Option Public
+Option Declare
+
+
+</lotusscript></code><code event='initialize'><lotusscript>Sub Initialize
+	
+	Dim ws As New NotesUIWorkspace
+	Dim db As NotesDatabase
+	Dim session As New NotesSession
+	Set db = session.Currentdatabase
+	
+	Dim dc As NotesDocumentCollection
+	Set dc = db.Unprocesseddocuments
+	
+	If dc.count = 0 Then
+		MsgBox "No documents selected"
+		Exit Sub
+	End If
+	
+	'get field names
+	Dim varFields
+	varFields = Evaluate("@Sort(@DocFields)", dc.getFirstDocument() )
+	
+	Dim strFieldName$, varFieldValue, strCurrentValue$
+	
+	strFieldName = ws.prompt(PROMPT_OKCANCELEDITCOMBO, "Select or enter field", "", "", varFields)
+	If strFieldName="" Then		'abort
+		Exit sub
+	End If
+	
+	strCurrentValue = dc.Getfirstdocument().getItemValue(strFieldName)(0)
+	varFieldValue = ws.prompt( PROMPT_OKCANCELEDIT, "Enter fieldvalue", "", strCurrentValue)
+	
+	If IsEmpty( varFieldValue) Then
+		print "Cancelled updating field " &amp; strFieldName
+		Exit sub
+	End If
+	
+	Dim strFieldType$		's, n, d
+	strFieldType = ws.prompt( PROMPT_OKCANCELEDIT, "Enter fieldtype (string=s, number=n, date=d)", "", "s")
+	
+	Dim doc As NotesDocument
+	Set doc = dc.Getfirstdocument()
+	
+	While Not doc Is Nothing
+		
+		Select Case strFieldType
+			Case "s"
+			doc.replaceItemValue strFieldName, varFieldValue	
+				Case "n"
+				doc.replaceItemValue strFieldName, CSng(varFieldValue)
+				Case "d"
+				doc.replaceItemValue strFieldName, CDat(varFieldValue)	
+		End Select
+		
+		doc.save False, false
+		
+		Set doc = dc.Getnextdocument(doc)
+	Wend
+	
+	Print "Updated field '" &amp; strFieldName &amp; "' to '" &amp; varFieldValue &amp; "' in " &amp; dc.Count &amp; " documents"
+	
+End Sub</lotusscript></code>
+<rundata processeddocs='0' exitcode='0' agentdata='51E7B54F4199B160C12578B10046E6C7'>
+<agentmodified><datetime dst='true'>20130702T163500,42+02</datetime></agentmodified>
+<agentrun><datetime dst='true'>20130702T163547,72+02</datetime></agentrun>
+<runlog>Started running agent 'Development\Replace field value' on 02-07-2013 16:35:41
+Running on selected documents: 12 total
+Found 12 document(s) that match search criteria
+Ran LotusScript code
+Done running agent 'Development\Replace field value' on 02-07-2013 16:35:47
+</runlog></rundata>
+<item name='$POID'><datetime>20121121T144726,83+01</datetime></item></agent>
+

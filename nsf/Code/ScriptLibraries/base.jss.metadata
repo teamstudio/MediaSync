@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="256" sequence="244" unid="5F9066D1F1A61238C1257A490050622D">
+<created><datetime dst="true">20120728T163800,13+02</datetime></created>
+<modified><datetime dst="true">20130704T104107,26+02</datetime></modified>
+<revised><datetime dst="true">20130703T202241,46+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130704T104107,26+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130614T173045,93+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name><name>CN=Mark Leusink/O=CITC</name><name>CN=Mark Leusink/O=LinQed</name><name>CN=Mark Leusink/O=CITC</name><name>CN=Mark Leusink/O=LinQed</name><name>CN=Mark Leusink/O=CITC</name><name>CN=Mark Leusink/O=LinQed</name><name>CN=Mark Leusink/O=CITC</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE" sign="true"><text>base</text></item>
+<item name="$Flags"><text>.5834Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

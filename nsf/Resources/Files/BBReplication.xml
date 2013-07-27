@@ -1,0 +1,9 @@
+<?xml version='1.0' ?>
+
+<designselection xmlns="www.teamstudio.com/unplugged">
+
+	<select notetype="xpage" name="unp*" />
+	<select notetype="view" name="unp*" />
+	<select notetype="imageresource" name="unp*" />
+
+</designselection>

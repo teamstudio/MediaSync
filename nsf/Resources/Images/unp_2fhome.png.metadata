@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls (1.6)" imagename="home.png" name="unp/home.png" publicaccess="false" readonly="true" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4fe" sequence="7" unid="65FB05724793A8C4C1257B8F007341DB">
+<created><datetime dst="true">20130619T225854,99+02</datetime></created>
+<modified><datetime dst="true">20130725T121354,55+02</datetime></modified>
+<revised><datetime dst="true">20130725T112814,36+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130725T121354,55+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130619T225855,00+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><jpeg>
+iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAMAAACnDzTfAAABO1BMVEUNDQ4bHR8AAAAAAAAAAAAa
+HB4AAAAbHR8YGhwAAAAaGx0ODxAAAAAAAAAXGBoAAAAbHR8ZGhwaHB4WFxkAAAAaHB4SFBUYGRsA
+AAAAAAAAAAAAAAAbHR8bHR/k5OTa2trd3d3g4OCRkZGOjo7Nzc1kZGaWlpbV1dXFxcXQ0NDU1NRj
+ZGVlZmjq6upkZmfn6Oh5eXnX19fh4eGbm5ugoKBgYmNdXl50dHR7e3ttbW1qamrj4+ONjY3l5eXn
+5+dhY2Tf3999fX1WV1d2dnaFhYWampo3ODrOzs6ZmZl6ent3d3eJiYk3ODl6enpfYWLY2NjGxsZ+
+fn6YmJhvcHE2ODmBgoKAgIBeX2GTk5PAwMBkZWZnaGhJSktiY2Tu7u64uLjIyMiCgoKQkJDMzMyH
+h4eVlZXExMSlpaWLi4uYRngQAAAAHXRSTlMAkTARA8EdVtEJy3w2E2Esk6U4bS2TgdwEIiQMq5xj
+dnoAAAFSSURBVHhedclVduNAFIThbklmhnCu2MjMzBBkhuHZ/wrSltuOR2N/T1XnR+tMxya0Bb5+
+v8ZbUjzxlohvjDiZataaqeSGiJ8avCRJfOPpv4gDfE2cq/EBXcSxrCQsSNnYPxG/tsXMkth+XYu4
+JQrRL4LYWkVcEDKRdRmhQCM+O4+qP9ap0fMzLbrvQ5EPvUjo3o2Q92Wkhn/rhdXRixft3F48bnJx
+u4MMk6tc/o9ePnc1MSCnGWCQ1xsAmJ3IYnTBOEeMg7JSV+Tg4oDLaEEEPPwi5OcbALh5lufnAdAC
+KN+J+tBmZ+y2YX1+lFWb/SVm4OAQ56Bn1fo/iT5wZHP0rNrdN+IOdEcDnUuiA7qjgfRpuVw+pU3b
+6WWzFku96bRH23yWilbafCfdarVaoa1CdvfERxu7uweERzseIPZ2Wdr22QM/wxweaefokGH8B+w+
+mZ/2z23R5b+pSAAAAABJRU5ErkJggg==
+</jpeg>
+<item name="$FileModDT" sign="true"><datetime dst="true">20110401T150719,00+01</datetime></item>
+</imageresource>

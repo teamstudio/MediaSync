@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoView var="viewCommunities" viewName="vCommunitiesByMember">
+			<xp:this.categoryFilter><![CDATA[#{javascript:sessionScope.get("currentUser");}]]></xp:this.categoryFilter>
+		</xp:dominoView>
+	</xp:this.data>
+
+	<xp:this.resources>
+		<xp:script src="/communitiesSync.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<xp:div id="communities">
+
+		<xp:div styleClass="lotusActionBar">
+
+			<xp:button value="Update communities"
+				id="btnReadCommunities" 
+				icon="/arrow_refresh.png"
+				rendered="#{javascript:sessionScope.hasUserConfig}">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="partial" refreshId="communities">
+					<xp:this.action><![CDATA[#{javascript:startReadCommunities();}]]></xp:this.action>
+					<xp:this.onStart><![CDATA[xProgress.start();
+							dijit.byId("#{id:btnReadCommunities}").setDisabled(true);]]></xp:this.onStart>
+					<xp:this.onComplete><![CDATA[xProgress.stop();]]></xp:this.onComplete>
+				</xp:eventHandler>
+			</xp:button>
+		</xp:div>
+
+		<br style="clear:both" />
+
+		<div>
+
+			<xp:pager id="pager1" for="repeatCommunities"
+				partialRefresh="true">
+				<xp:pagerControl id="pagerControl2" type="Previous">
+				</xp:pagerControl>
+				<xp:pagerControl id="pagerControl3" type="Group"></xp:pagerControl>
+				<xp:pagerControl id="pagerControl1" type="Next"></xp:pagerControl>
+
+			</xp:pager>
+		</div>
+
+		<xp:div styleClass="lotusMessage lotusInfo">
+			<xp:this.rendered><![CDATA[#{javascript:getComponent("repeatCommunities").getRowCount()==0}]]></xp:this.rendered>
+			No communities found
+		</xp:div>
+
+		<xp:repeat id="repeatCommunities" rows="20" var="entry"
+			value="#{viewCommunities}" indexVar="entryIndex">
+			<xp:this.rendered><![CDATA[#{javascript:getComponent("repeatCommunities").getRowCount()>0}]]></xp:this.rendered>
+
+			<xp:this.facets>
+				<xp:pager partialRefresh="true"
+					layout="Previous Group Next" xp:key="headerPager" id="pager2">
+				</xp:pager>
+				<xp:text xp:key="header" escape="false"
+					disableTheme="true">
+					<xp:this.value><![CDATA[<table class="lotusTable"><tbody>]]></xp:this.value>
+				</xp:text>
+				<xp:text xp:key="footer" escape="false"
+					disableTheme="true">
+					<xp:this.value><![CDATA[</tbody></table>]]></xp:this.value>
+				</xp:text>
+
+			</xp:this.facets>
+
+			<xp:tr>
+				<td>
+
+					<h4>
+					
+						<xp:link escape="true" text="#{entry.title}" id="link3">
+							<xp:this.value><![CDATA[#{javascript:applicationScope.get("dbPath") + "/" + entry.getOpenPageURL("community.xsp", true)}]]></xp:this.value>
+						</xp:link>
+					
+					</h4>
+				</td>
+
+			</xp:tr>
+
+			<xp:tr styleClass="lotusDetails">
+
+				<xp:this.rendered><![CDATA[#{javascript:!isEmpty(entry.getColumnValue("description"));}]]></xp:this.rendered>
+				<td>
+					<xp:text escape="false" disableTheme="true"
+						value="#{entry.description}">
+					</xp:text>
+
+				</td>
+			</xp:tr>
+		</xp:repeat>
+
+	</xp:div>
+
+</xp:view>

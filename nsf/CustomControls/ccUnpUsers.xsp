@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+
+<div class="page-header position-relative" >
+	<h1>Users</h1>
+</div>	
+
+<xp:dataTable id="dataTable1" rows="100" var="entry" styleClass="table table-striped table-condensed">
+		<xp:this.data>
+			<xp:dominoView var="view1" databaseName="Unplugged.nsf"
+				viewName="AllUsers">
+			</xp:dominoView>
+		</xp:this.data>
+		
+		<!-- enabled? -->
+		<xp:column id="column1">
+			<xp:this.facets>
+				
+			</xp:this.facets>
+			
+			<xp:text escape="false" id="e" tagName="i" styleClass="#{javascript:(entry.getColumnValue('$10')=='vwenabled.gif' ? 'icon-ok' : 'icon-ban-circle')}" />
+		</xp:column> 
+
+		<xp:column id="column2">
+			<xp:this.facets>
+				<xp:text value="User" xp:key="header" />
+			</xp:this.facets>
+
+			<xp:text value="#{entry.$2}" />
+		</xp:column>
+		
+		<xp:column id="column3">
+			<xp:this.facets>
+				<xp:text value="Profile" xp:key="header" />
+			</xp:this.facets>
+
+			<xp:text value="#{entry.$6}" />
+		</xp:column>
+		
+		
+	</xp:dataTable>
+
+
+</xp:view>

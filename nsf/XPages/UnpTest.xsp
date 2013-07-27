@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+
+	<h1><xp:link escape="true" text="Back" id="link1" value="UnpMain.xsp"></xp:link></h1>.
+	<xp:br></xp:br><xp:br></xp:br>this is test page<xp:br></xp:br><xp:br></xp:br>
+
+<!--	<iframe src="/teamstudio/mediasync.unp/0/943EB7D406FC30CEC1257B9700391BFC/$file/BIO05262.png" style="border:0; width: 100%" />-->
+<!--	-->
+<!--	<iframe src="/teamstudio/mediasync.unp/0/DE342214BF95D7D6C1257B9700391C2B/$file/SF_CLS_Step_by_step_Guide_DE.pdf" style="border:0; width: 100%" />-->
+<!--	-->
+	<video width="320" height="240" controls="true">
+		<source src="/teamstudio/mediasync.unp/0/F6DE4BC62B312DBDC1257B9700391350/$file/Evia_standalone.mp4" type="video/mp4" />
+	</video>
+	
+	<video width="320" height="240" controls="true">
+		<source src="http://localhost:8311/teamstudio/mediasync.unp/0/F64362B9563E834EC1257B97003910E3/$file/sample_iTunes.mov" />
+	</video>
+	
+	
+
+</xp:view>

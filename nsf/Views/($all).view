@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='($all)' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B8A0052617C'
+ hide='web' showinmenu='false' publicaccess='false' designerversion='8.5.3'
+ unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator' headers='beveled'
+ opencollapsed='false' showresponsehierarchy='true' showmargin='true' shrinkrows='false'
+ extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='1'
+ headerlinecount='1' rowspacing='1' bgcolor='white' altrowcolor='#efefef'
+ totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
+<noteinfo noteid='1ae' unid='5EB463EC8867974FC1257A4A006900CA' sequence='17'>
+<created><datetime dst='true'>20120729T210654,82+02</datetime></created>
+<modified><datetime dst='true'>20130705T092706,06+02</datetime></modified>
+<revised><datetime dst='true'>20130704T111628,22+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130705T092706,06+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,06+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT @All</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='Form' width='2.7500'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true' twisties='true'><font size='8pt' style='bold'/><columnheader
+><font size='9pt' style='bold'/></columnheader></column>
+<column sort='descending' hidedetailrows='false' itemname='$0' width='14'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><font size='8pt'/><columnheader title='modified'><font
+ size='9pt' style='bold'/></columnheader><code event='value'><formula>@Modified</formula></code></column>
+<column hidedetailrows='false' itemname='$2' width='24' resizable='true' separatemultiplevalues='false'
+ sortnoaccent='false' sortnocase='true' showaslinks='false'><font size='8pt'/><columnheader
+ title='unid'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@Text(@DocumentUniqueID)</formula></code></column>
+<column hidedetailrows='false' itemname='title' width='25.8750' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='8pt'/><columnheader title='title'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='$3' width='25.3750' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='8pt'/><columnheader title='attachments'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>@AttachmentNames</formula></code></column>
+<column hidedetailrows='false' itemname='status' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><font
+ size='8pt'/><columnheader title='status'><font size='9pt' style='bold'/></columnheader></column>
+<column align='right' totals='total' hidedetailrows='false' itemname='$4'
+ width='7.6250' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><font size='8pt'/><columnheader align='right'
+ title='size'><font size='9pt' style='bold'/></columnheader><numberformat
+ format='fixed' punctuated='false' parens='false' percent='false' bytes='true'
+ decimalsym=',' thousandssep='.' currencysymtype='custom' currencysym='€'
+ usecustomsym='false'/><code event='value'><formula>@DocLength</formula></code></column></view>
+

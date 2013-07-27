@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5ea" sequence="118" unid="936BACBF21D5A928C1257B900034A851">
+<created><datetime dst="true">20130620T113509,61+02</datetime></created>
+<modified><datetime dst="true">20130727T191606,55+02</datetime></modified>
+<revised><datetime dst="true">20130727T160841,62+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130727T191606,55+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130620T113509,62+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE"><text>unpHorizontalView.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+
+
+<item name="$Class"><text>Unplugged Controls (1.6)</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>unpHorizontalView.xsp</text></item>
+
+</note>

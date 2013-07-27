@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docFile" formName="fFileMetadata"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if (docFile.isNewNote() ) {
+	docFile.replaceItemValue("isMediaFile", (context.getUrlParameter("media").equals("true") ? "true" : "false" ) );
+	docFile.replaceItemValue("communityId", context.getUrlParameter("cid") );
+}
+
+viewScope.put("isMediaFile", ( docFile.getItemValueString("isMediaFile").equals("true") ? true : false) );
+
+var collectionId:String = ( viewScope.get("isMediaFile") ? docFile.getItemValueString("communityId") : sessionScope.get("currentUser") );
+
+viewScope.put("collectionId", collectionId );
+
+}]]></xp:this.beforePageLoad>
+	
+				<xp:table styleClass="form">
+					<xp:tr>
+						<xp:this.rendered><![CDATA[#{javascript:!docFile.isNewNote() && !docFile.getItemValueString("status").equals("local")}]]></xp:this.rendered>
+						<xp:td>
+							<xp:label value="Id:" id="id_Label1"
+								for="id1" style="font-weight:bold">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText value="#{docFile.id}" id="id1"
+								readonly="true">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr
+						rendered="#{javascript:!docFile.isNewNote()}">
+						<xp:td>
+							<xp:label value="Title: *" id="title_Label1"
+								for="inputTitle" style="font-weight:bold">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText value="#{docFile.title}"
+								id="inputTitle" style="width: 350px;">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label id="label2" for="link1"
+								style="font-weight:bold">
+								<xp:this.value><![CDATA[#{javascript:( viewScope.isMediaFile ? "Photo/ video:" : "File:") }]]></xp:this.value>
+							</xp:label>
+						</xp:td>
+						<xp:td>
+
+							<xp:link escape="true" text="Preview"
+								target="_blank" id="link1">
+								<xp:this.value><![CDATA[#{javascript:var att = docFile.getAttachmentList("attachment");
+
+if (att.size()>0) {
+
+	var first = att.get(0);
+	
+	return applicationScope.get("dbPath") + "/" + docFile.getDocument().getUniversalID() + "/$file/" + java.net.URLEncoder.encode(first.getName(), "UTF-8")
+}
+
+}]]></xp:this.value>
+								<xp:this.rendered><![CDATA[#{javascript:docFile.getAttachmentList("attachment").size()>0}]]></xp:this.rendered>
+							</xp:link>
+
+
+							<xp:fileDownload rows="30"
+								id="fileDownload1" displayLastModified="false"
+								value="#{docFile.file}"
+								rendered="#{javascript:!docFile.isNewNote()}"
+								displayCreated="false" displayType="false">
+							</xp:fileDownload>
+
+
+							<!-- upload used when editing existing file -->
+							<xp:div style="margin-top:10px">
+								<xp:this.rendered><![CDATA[#{javascript:!docFile.isNewNote() && docFile.isEditable()}]]></xp:this.rendered>
+								<b>Replace file:</b>							
+							</xp:div>
+							
+							<xp:fileUpload id="fileUpload1"
+								value="#{docFile.file}">
+								<xp:this.rendered><![CDATA[#{javascript:docFile.isEditable()}]]></xp:this.rendered>
+
+								<!--<xp:this.accept><![CDATA[#{javascript:( viewScope.isMediaFile ? "image/gif,image/jpeg,image/png,video/mpeg,video/quicktime,flv-application/octet-stream,video/x-flv" : "")}]]></xp:this.accept>
+							--></xp:fileUpload> <br />
+ 							<xp:text style="font-style:italic" escape="true" id="computedField1" rendered="#{viewScope.isMediaFile}" value="(valid media file types: jpg, jpeg, png, flv, mpg, mov)"></xp:text>
+
+
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Tags:" id="label1"
+								for="link1" style="font-weight:bold">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText value="#{docFile.tags}"
+								id="inputTags" style="width: 350px;" multipleTrim="true">
+								<xp:this.multipleSeparator><![CDATA[#{javascript:" "}]]></xp:this.multipleSeparator>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td valign="top">
+							<b>Description:</b>
+						</xp:td>
+						<xp:td>
+						
+							<xp:inputTextarea id="inputTextarea1" value="#{docFile.description}" style="width: 350px; height: 90px"></xp:inputTextarea>
+							
+						</xp:td>
+					</xp:tr>
+			
+	
+	<xp:tr>
+		<xp:td styleClass="buttons" colspan="2">
+				<xp:button value="Edit" id="button2"
+					rendered="#{javascript:!docFile.isEditable();}">
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Save" id="button1"
+					rendered="#{javascript:docFile.isEditable();}">
+
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var attList = docFile.getAttachmentList("attachment");
+
+if (docFile.isNewNote() ) { 
+						
+	//validate that a file was selected
+	if (attList.size()==0) {
+		addUserMessage("Please select a file");
+		return;
+	}
+	
+	//check if the fileName of the uploaded file is unique
+	var fileName:String = attList.get(0).getName();
+	var keys:java.util.Vector = new java.util.Vector();
+	keys.add( viewScope.get("collectionId") );
+	keys.add( fileName );
+	if (database.getView("vFilesByCollection").getEntryByKey(keys) != null) {
+	
+		docFile.removeAttachment("attachment", fileName);
+		
+		addUserMessage("Your files collection already contains a file named " + fileName + ". Please select another file.");
+		return;
+	}
+	
+	//set default title: file name
+	docFile.replaceItemValue("title", fileName );
+	
+	
+} else {
+	
+	
+	if (attList.size()==2) {		//new file uploaded
+		
+		for(var i=0; i<attList.size(); i++) {
+			var att = attList.get(i);
+
+			if (att.getState()==0) {		//STATE_INDOCUMENT: this is the 'old' file: remove it
+			
+				docFile.removeAttachment("attachment", att.getName() );
+			
+			} else if (att.getState()==1) {		//STATE_ADDED: this is the new file
+			
+			} 
+
+		}
+		
+		//set status to updated
+		docFile.replaceItemValue("status", "update");
+		docFile.replaceItemValue("statusFile", "update");
+	
+	}
+}
+
+var title = docFile.getItemValueString("title");
+var isVideo = (title.indexOf(".flv")>-1 || title.indexOf(".mov")>-1 || title.indexOf(".mp4")>-1);
+
+docFile.replaceItemValue("isVideo", (isVideo ? "true" : "false") );
+						
+//set readers/ authors for new files
+var doc = docFile.getDocument();
+
+doc.replaceItemValue("docReaders", ["[admin]"]).setReaders(true);
+doc.replaceItemValue("author", sessionScope.get("currentUser")).setAuthors(true);
+
+if (docFile.isNewNote()) {
+	docFile.replaceItemValue("status", "local");
+} else if (docFile.getItemValueString("status").equals("synced")) {
+	docFile.replaceItemValue("status", "update");
+}
+
+docFile.save();
+
+sessionScope.put("hasPendingFileSyncTasks", true);
+
+context.redirectToPage(applicationScope.get("dbPath") + sessionScope.get("returnTo"));}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:link escape="true" id="link2">
+
+					<xp:this.text><![CDATA[#{javascript:(docFile.isNewNote() ? "Cancel" : "Back")
+}]]></xp:this.text>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" disableValidators="true">
+						<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder");}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+
+		</xp:td></xp:tr>
+			</xp:table>
+
+	<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[try {
+	dojo.byId("#{id:inputTitle}").focus();
+} catch (e) {}]]></xp:this.script>
+	</xp:eventHandler>
+	
+
+</xp:view>

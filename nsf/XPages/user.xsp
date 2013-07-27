@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoDocument var="docUser" formName="fUser"
+			action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:@DbLookup( @DbName(), "vUsers", @UserName(), 2);}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:ccLayout>
+
+		<xp:this.facets>
+
+			<xp:div xp:key="contents">
+
+				<xp:table styleClass="form">
+					<xp:tr>
+						<xp:td>
+							<xp:label value="User name:"
+								id="userName_Label1" for="userName1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+
+							<xp:text escape="true" id="computedField1"
+								value="#{javascript:@UserName()}">
+							</xp:text>
+
+
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr>
+						<xp:td>
+							<xp:label value="IBM Connections server:"
+								id="label1" for="userName1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+
+							<xp:text escape="true"
+								id="computedField2">
+								<xp:this.value><![CDATA[#{javascript:applicationScope.get("connectionsServerDescription") +  " (" + applicationScope.get("connectionsServerUrl") + ")";}]]></xp:this.value>
+							</xp:text>
+
+
+						</xp:td>
+					</xp:tr>
+					<xp:tr>
+						<xp:td>
+							<xp:label
+								value="Connections username/ e-mail *:"
+								id="connectionsUsername_Label1" for="connectionsUsername1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docUser.connectionsUsername}" id="connectionsUsername1"
+								required="true" style="width:200px">
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Enter your IBM Connections username">
+									</xp:validateRequired>
+								</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+
+					<xp:tr>
+						<xp:td>
+							<xp:label value="Connections password *:"
+								id="connectionsPassword_Label1" for="inputPassword">
+							</xp:label>
+						</xp:td>
+						
+						<xp:td id="editPassword">
+							<xp:link escape="true" id="link2"
+								text="change" >
+								<xp:this.rendered><![CDATA[#{javascript:docUser.isEditable() && !docUser.isNewNote() && !viewScope.editPassword}]]></xp:this.rendered>
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="editPassword" immediate="true">
+									<xp:this.action><![CDATA[#{javascript:viewScope.editPassword = true;}]]></xp:this.action>
+									<xp:this.onComplete><![CDATA[dojo.query('input[id$="inputPassword"]')[0].focus();]]></xp:this.onComplete>
+									
+								</xp:eventHandler></xp:link>
+							<xp:inputText
+								value="#{docUser.connectionsPassword}" id="inputPassword"
+								required="true" password="true" style="width:200px">
+								<xp:this.rendered><![CDATA[#{javascript:docUser.isNewNote() || viewScope.editPassword}]]></xp:this.rendered>
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Enter your IBM Connections password">
+									</xp:validateRequired>
+								</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr>
+						<xp:td colspan="2">
+						
+						<xp:button value="Save" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:var doc = docUser.getDocument();
+
+doc.replaceItemValue("docReaders", ["[admin]"]).setReaders(true);
+doc.replaceItemValue("docAuthors", @UserName()).setAuthors(true);
+doc.replaceItemValue("userName", @UserName());
+
+docUser.save();
+
+loadUserConfig(true);
+
+context.redirectToHome();}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:link escape="true" text="Cancel" id="link1"
+					value="/home.xsp">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete" immediate="true">
+					</xp:eventHandler>
+				</xp:link>
+				</xp:td>
+				</xp:tr>
+					
+				</xp:table>
+
+				</xp:div>
+</xp:this.facets>
+</xc:ccLayout>
+
+<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[try {
+	dojo.byId("#{id:connectionsUsername1}").focus();
+} catch (e) {}]]></xp:this.script>
+	</xp:eventHandler>
+
+</xp:view>

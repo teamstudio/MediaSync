@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	
+	<div class="page-header position-relative" >
+	<h1>Configuration</h1>
+</div>	
+
+	<xp:button value="Add configuration" id="button1"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+		<i class="icon-plus" />
+	<xp:this.action>
+		<xp_1:changeDynamicContentAction facetName="configuration"
+			for="dynamicContent1">
+			<xp_1:this.parameters>
+				<xp:parameter name="action" value="newDocument"></xp:parameter>
+			</xp_1:this.parameters>
+		</xp_1:changeDynamicContentAction>
+	</xp:this.action></xp:eventHandler></xp:button>
+
+
+	<xp:viewPanel rows="30" id="viewPanel1" var="entryRow">
+		<xp:this.facets>
+
+		</xp:this.facets>
+		<xp:this.data>
+			<xp:dominoView var="view1" viewName="vConfig">
+			</xp:dominoView>
+		</xp:this.data>
+		
+		<xp:viewColumn id="viewColumn1" value="">
+		
+			<xp:viewColumnHeader value="Description"
+				id="viewColumnHeader1">
+			</xp:viewColumnHeader>
+
+			<xp:link escape="true" text="#{entryRow.description}"
+				id="link1">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="dynamicContent1">
+				<xp:this.action>
+					<xp_1:changeDynamicContentAction
+						facetName="configuration" for="dynamicContent1">
+						<xp_1:this.parameters>
+							<xp:parameter
+								value="#{javascript:entryRow.getNoteID()}" name="documentId">
+							</xp:parameter>
+							<xp:parameter name="action"
+								value="editDocument">
+							</xp:parameter>
+						</xp_1:this.parameters>
+					</xp_1:changeDynamicContentAction>
+				</xp:this.action></xp:eventHandler></xp:link>
+
+
+		</xp:viewColumn>
+
+		<xp:viewColumn columnName="Host" id="viewColumn2">
+			<xp:viewColumnHeader value="Host" id="viewColumnHeader2"></xp:viewColumnHeader>
+		</xp:viewColumn>
+
+		<xp:viewColumn id="viewColumn3" value="">
+			<xp:viewColumnHeader value="Active?"
+				id="viewColumnHeader3">
+			</xp:viewColumnHeader>
+
+			<xp:text escape="true" id="computedField1">
+
+				<xp:this.value><![CDATA[#{javascript:(entryRow.getColumnValue("isActive").equals("true") ? "Yes" : "")}]]></xp:this.value>
+			</xp:text>
+
+		</xp:viewColumn>
+	</xp:viewPanel>
+
+</xp:view>

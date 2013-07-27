@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<imageresource name='$DBIcon' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' publicaccess='false' designerversion='8.5.3'
+ imagename='C:\Users\Mark Leusink\Documents\Projects\Teamstudio\Biotronik\images\biotronik_logo_32.png'>
+<noteinfo noteid='1ba' unid='6FAFD28D8C41E841C1257A4C00701294' sequence='3'>
+<created><datetime dst='true'>20120731T222407,88+02</datetime></created>
+<modified><datetime dst='true'>20130614T173045,13+02</datetime></modified>
+<revised><datetime dst='true'>20130614T171106,52+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130614T173045,13+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,13+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><jpeg>
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKMSURBVHjaxFfLbcJAELUtCqCDOB2QCsAV
+APdIMbfkBCgFAPdEwClHiJJ7TAU4FWAqiFNB3AGZid6i9WKv1+aTkUYLhp2ZffNmZm3vdjurSB6e
+3+u0dEjbpA1Sl3Ty8ng7pt/G9HlEmpBGpCvSgH6LLQOpFTh2Ydw3sMVBtqBT2hvQOiwKxNE4H9Cy
+MXSeJYzYFxAyRwBwT49wrMqIbDZp7RIaiRYBOF+f0LkQTssa9rUpmIJk5xC2u8gNADk/5clDrgas
+e17AT5oDgIbZblGebE1FTEEunRywX+EVc2Ip+CBIOEAZyQ5l9sa0YclEoucbTZrYcI8dkop0xugZ
+/PwbB2Ud/qUA0fWz2Cvpgv4n0rPKcZ4IoyDyAOTjfRv2w40LAfmCkA4grRvkVEDa1pw+IcONDITq
+Er8m+N4RKWjmGJxIn7nFRmR8oYH/Uyq5LOHAZ9JB2O/S0RgMhdLJAjzbahBKDKsjkcrS0gWwFkon
+/+GTUSAzBRm1zgVaOoRcNQAT4ZzdiVxrIOYyDiWYUxzJ4pBTorFslRMctFtCSuS/KwXBkPe4L4Cg
+vuk49uS8kYFIblg58kH/6QKFa3bI+9BXGkhpSuz7p7edxrGa476EAEP6itT4GXCvJMK10RdSwl23
+BqhchXwm4mtmh28wVyLBgdD6H/kLwDa5E55TahmDx3jcMtnA/FbJvWK47avgquJdIITzUcl9M7UP
+TC6IOlfGPBUALg+zCwUwly8rjjL9onMzH3eCw1aMK1KvxFSrAr2nvRWjbXo5w+TYmvcK3wukIG5O
+2KACOI+M3w0RqUc13sFt1q3gOMbtOKj8corNAQJpG9wfE5x4VeR4Pw3LtmK8H7joZrH6vSxMvwIM
+ACtDC19rufBKAAAAAElFTkSuQmCC
+</jpeg>
+<item name='$FileSize' sign='true'><number>762</number></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime dst='true'>20130614T171059,82+02</datetime></item></imageresource>
+

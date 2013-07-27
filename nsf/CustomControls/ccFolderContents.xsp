@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<xp:this.beforePageLoad><![CDATA[#{javascript:viewScope.put("folderIds", [{id:"root", title:"Root"}]);}]]></xp:this.beforePageLoad>
+	
+	<div class="page-header position-relative" >
+		<h1>MediaSync
+	
+			<small>
+			<i class="icon-double-angle-right"></i>&#160;
+			<xp:text escape="true" value="#{applicationScope.connectionsServerDescription}" id="computedField6"></xp:text>&#160;library
+		</small>
+	</h1>
+
+	</div> 
+  
+	<xp:this.data>
+		<xp:dominoView var="vFolderContents"
+			viewName="vFolderContentsByParentId">
+			<xp:this.categoryFilter><![CDATA[#{javascript:if ( !viewScope.containsKey('folderIds') ) {
+				viewScope.put("folderIds", [{id:"root", title:"Root"}]);
+			}
+			return applicationScope.get("activeConfigId") + "-" + viewScope.folderIds[ viewScope.folderIds.length - 1 ].id;
+		}]]></xp:this.categoryFilter>
+		</xp:dominoView>
+	</xp:this.data>
+	
+	<xp:panel id="folderContents">
+	
+		<!-- sync -->
+		
+		<div class="row-fluid">
+		
+			<div class="span2">
+				
+				<xp:button styleClass="btn btn-small btn-success" value="Sync" id="button2">
+					<i class="icon-refresh" />
+		
+					<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="dynamicContent1">
+							<xp:this.action><![CDATA[#{javascript:syncBean.sync()}]]></xp:this.action>
+							<xp:this.onStart><![CDATA[xProgress.start();
+								dojo.addClass("#{id:button1}", "disabled");]]></xp:this.onStart>
+							<xp:this.onComplete><![CDATA[xProgress.stop();
+							dojo.removeClass("#{id:button1}", "disabled");]]></xp:this.onComplete>
+						</xp:eventHandler>
+				</xp:button>
+				
+			</div>
+			<div class="span10">
+				
+					<xp:span id="progress" style="display:none;">
+	
+						<!-- loading image -->
+						<xp:image url="/loading.gif" id="imageLoading"></xp:image>
+		
+						<!--  progress message area -->
+						<span style="padding-left: 15px; color: #444"></span>
+						
+					</xp:span>
+	
+					<xp:scriptBlock id="scriptBlock2">
+						<xp:this.value><![CDATA[dojo.addOnLoad( function() {
+					xProgress.targetNodeId = "#{id:progress}";
+				} );]]></xp:this.value>
+					</xp:scriptBlock>
+					
+			
+			</div>
+		
+		</div>
+	
+
+		<!-- breadcrumbs -->
+		<div style="margin: 10px 0">
+			
+			<xp:repeat id="repeat2" rows="30" value="#{viewScope.folderIds}"
+				var="crumb" indexVar="crumbIndex" disableOutputTag="true">
+	
+				<xp:link escape="true" text="#{crumb.title}" id="link5">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="folderContents">
+						<xp:this.action><![CDATA[#{javascript:var newList = [];
+						
+						for (var i=0; i <= crumbIndex; i++) {
+							newList.push( viewScope.folderIds[i] );
+						}
+						
+						viewScope.folderIds = newList;					
+						}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+				<xp:span>
+					<xp:this.rendered><![CDATA[#{javascript:viewScope.folderIds.length > 1}]]></xp:this.rendered>
+					&#160; 
+					<i class="icon-double-angle-right" />
+					&#160;
+				</xp:span>
+			</xp:repeat>
+		</div>
+
+
+		<div>
+
+			<xp:pager id="pager1" for="repeatFiles"
+				partialRefresh="true">
+				<xp:pagerControl id="pagerControl2" type="Previous">
+				</xp:pagerControl>
+				<xp:pagerControl id="pagerControl3" type="Group"></xp:pagerControl>
+				<xp:pagerControl id="pagerControl1" type="Next"></xp:pagerControl>
+			</xp:pager>
+		</div>
+
+		<table class="table table-striped table-condensed">
+			<tbody>
+
+				<!--<xp:tr>
+					<xp:this.rendered><![CDATA[#{javascript:viewScope.folderIds.length>1}]]></xp:this.rendered>
+					<td style="width: 50px">
+					<xp:image id="image2"
+					url="/folder.png"></xp:image>
+					</td>
+					<td>
+					<xp:link escape="true" text=".." id="link3">
+					<xp:eventHandler event="onclick" submit="true"
+					refreshMode="partial" refreshId="folderContents">
+					<xp:this.action><![CDATA[#{javascript://remove the last entry from the indices
+					var c = viewScope.folderIds;
+					c.pop();
+					viewScope.folderIds = c;
+					}]]></xp:this.action>
+					</xp:eventHandler>
+					</xp:link>
+					</td>
+					</xp:tr>
+					
+				-->
+				<xp:repeat id="repeatFiles" rows="20" var="entry"
+					value="#{vFolderContents}" indexVar="entryIndex">
+					<xp:this.rendered><![CDATA[#{javascript:getComponent("repeatFiles").getRowCount()>0}]]></xp:this.rendered>
+
+					<xp:this.facets>
+						<xp:pager partialRefresh="true"
+							layout="Previous Group Next" xp:key="headerPager" id="pager2">
+						</xp:pager>
+
+					</xp:this.facets>
+
+
+					<xp:tr>
+
+						<!-- icon -->
+						<td style="width: 50px">
+							<xp:image id="image1"
+								rendered="#{javascript:entry.getColumnValue('type').equals('folder')}"
+								url="/folder.png">
+							</xp:image>
+
+							<xp:div
+								rendered="#{javascript:!entry.getColumnValue('type').equals('folder')}">
+								<xp:this.styleClass><![CDATA[#{javascript:"hviewicon icon-" + entry.getColumnValue('type')}]]></xp:this.styleClass>
+							</xp:div>
+
+						</td>
+
+
+						<td>
+						
+							<!-- folder -->
+							<xp:link escape="true"
+								text="#{entry.title}" style="font-weight: bold"
+								rendered="#{javascript:entry.getColumnValue('type').equals('folder')}"
+								id="link1">
+
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial"
+									refreshId="folderContents">
+									<xp:this.action><![CDATA[#{javascript:var c = viewScope.folderIds;
+								c.push( {"id" : entry.getColumnValue('id'), "title" : entry.getColumnValue('title') } );
+								viewScope.folderIds = c;
+							}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							
+							
+
+							<!-- link to file -->
+							<xp:link escape="true"
+								text="#{entry.title}" style="font-weight: bold"
+								rendered="#{javascript:!entry.getColumnValue('type').equals('folder')}"
+								id="link2">
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial"
+									refreshId="dynamicContent1">
+									<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("file", {action:"openDocument", documentId : entry.getNoteID()});}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							
+							<!-- entry count -->
+							<xp:text
+								rendered="#{javascript:entry.getColumnValue('type').equals('folder')}"
+								value="#{javascript:' (' + vFolderContents.getAllEntriesByKey( applicationScope.get('activeConfigId') + '-' + entry.getColumnValue('id'), true).getCount() + ')'}">
+								<xp:this.converter>
+									<xp:convertNumber type="number"
+										integerOnly="true">
+									</xp:convertNumber>
+								</xp:this.converter>
+							</xp:text>
+
+							<xp:div>
+							 <xp:this.rendered><![CDATA[#{javascript:!isEmpty(entry.getColumnValue("description"));}]]></xp:this.rendered>
+								<xp:text escape="false" disableTheme="true"
+									value="#{entry.description}">
+								</xp:text>
+							</xp:div>
+							
+							
+							
+
+							<xp:div rendered="#{javascript:!entry.getColumnValue('type').equals('folder')}">
+
+								<!-- standard and image link -->
+								<xp:link target="_blank"
+									escape="true" id="link4" text="Preview">
+									<xp:this.value><![CDATA[#{javascript:applicationScope.get("dbPath") + "/0/" + entry.getColumnValue("attachmentUrl")}]]></xp:this.value>
+									<xp:this.rendered><![CDATA[#{javascript:var t = entry.getColumnValue("type");
+!t.equals("mov");}]]></xp:this.rendered>
+								</xp:link>
+
+								<!-- video link -->
+								<xp:link escape="true"
+									disableTheme="true" title="#{entry.title}" target="_blank"
+									id="link3" text="Preview video">
+									<xp:this.rendered><![CDATA[#{javascript:entry.getColumnValue("type").equals("mov")}]]></xp:this.rendered>
+
+									<xp:eventHandler event="onclick"
+										submit="false">
+										<xp:this.script><![CDATA[
+									dijit.byId("videoDialog").show();
+									
+				var db = "#{javascript:applicationScope.dbPath}";
+					
+				if (typeof player == "undefined" || player == null) {
+									
+				player = jwplayer("videoPlayer").setup({
+				flashplayer: "#{javascript:applicationScope.dbPath}/mediaplayer-5.10/player.swf",
+				height: 310,
+				width: 550
+				});
+					
+				}
+				
+				player.load(db + "/0/" + "#{javascript:entry.getColumnValue('attachmentUrl')}");
+				player.play();
+				
+				]]></xp:this.script>
+									</xp:eventHandler>
+								</xp:link>
+
+								<!-- size -->
+								&#160;(
+								<xp:text escape="true"
+									id="computedField3" value="#{entry.attachmentSize}">
+									<xp:this.converter>
+										<xp:customConverter
+											getAsObject="#{javascript:value}">
+											<xp:this.getAsString><![CDATA[#{javascript:var kbSize = value/1024;
+			
+			if (kbSize < 1024) {
+				return @Text( kbSize, "F,0") + " KB";
+			} else {
+				var mbSize = kbSize / 1024
+				return @Text( mbSize, "F,1") + " MB";
+			}
+			}]]></xp:this.getAsString>
+										</xp:customConverter>
+									</xp:this.converter>
+								</xp:text>
+								)
+
+								<!-- category -->
+								&#160;|&#160;
+								Category:&#160;
+								<xp:repeat id="repeat3" rows="30"
+									var="lan" disableOutputTag="true">
+									<xp:this.value><![CDATA[#{javascript:var t = entry.getColumnValue("category");
+			(typeof t == "string" ? [t] : t);}]]></xp:this.value>
+									<xp:text escape="true"
+										id="computedField2" styleClass="label label-green arrowed-right" value="#{lan}">
+									</xp:text>
+								</xp:repeat>
+								
+								<!-- year -->
+								&#160;|&#160;
+								Year:&#160;
+								<xp:repeat id="repeat4" rows="30"
+									var="lan" disableOutputTag="true">
+									<xp:this.value><![CDATA[#{javascript:var t = entry.getColumnValue("year");
+			(typeof t == "string" ? [t] : t);}]]></xp:this.value>
+									<xp:text escape="true"
+										id="computedField4" styleClass="label label-green arrowed-right" value="#{lan}">
+									</xp:text>
+								</xp:repeat>
+								
+								<!-- languages -->
+								&#160;|&#160;
+								Language:&#160;
+								<xp:repeat id="repeat5" rows="30"
+									var="lan" disableOutputTag="true">
+									<xp:this.value><![CDATA[#{javascript:var t = entry.getColumnValue("language");
+			(typeof t == "string" ? [t] : t);}]]></xp:this.value>
+									<xp:text escape="true"
+										id="computedField5" styleClass="label label-green arrowed-right" value="#{lan}">
+									</xp:text>
+								</xp:repeat>
+
+&#160;|&#160;
+
+								Last modified:&#160;
+								<xp:text escape="false"
+									disableTheme="true" value="#{entry.dateCreated}">
+									<xp:this.converter>
+										<xp:convertDateTime type="both"
+											timeStyle="short">
+										</xp:convertDateTime>
+									</xp:this.converter>
+								</xp:text>
+
+								<!--<xp:span
+									rendered="#{javascript:compositeData.showStatus}">
+									&#160;|&#160; Status:&#160;
+									<xp:text escape="false" disableTheme="true"
+									value="#{entry.status}">
+									</xp:text>
+									</xp:span>
+									
+								-->
+
+								<!--<xp:span
+									rendered="#{javascript:compositeData.showDelete}">
+									&#160;|&#160;
+									<xp:link escape="true" text="delete"
+									id="linkDelete">
+									<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial"
+									refreshId="#{compositeData.refreshId}">
+									<xp:this.action><![CDATA[#{javascript:var docFile:NotesDocument = entry.getDocument();
+									var status = docFile.getItemValueString("status");
+									
+									if (status.equals("local")) {
+									docFile.remove(true);
+									} else {
+									docFile.replaceItemValue("status", "delete");
+									docFile.save();
+									
+									}}]]></xp:this.action>
+									<xp:this.script><![CDATA[return confirm("Are you sure you want to delete this file?");]]></xp:this.script>
+									</xp:eventHandler>
+									</xp:link>
+									</xp:span>
+									
+								-->
+							</xp:div>
+
+						</td>
+
+					</xp:tr>
+
+					
+				</xp:repeat>
+
+			</tbody>
+		</table>
+
+
+		<xp:div styleClass="lotusMessage lotusInfo">
+			<xp:this.rendered><![CDATA[#{javascript:getComponent("repeatFiles").getRowCount()==0}]]></xp:this.rendered>
+			No files found
+		</xp:div>
+	</xp:panel>
+
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[//set up the dialog to show the videos
+dojo.addOnLoad( function() {
+
+	var videoDialog = dijit.byId("videoDialog");
+	
+	if (!videoDialog) {
+
+	new dijit.Dialog({
+	        id:'videoDialog',
+	        title:'Video',
+	        style:'width:580px;height:380px;',
+	        content:"<div id='videoPlayer'></div>",
+	        onCancel: function (){
+	       	 	//stop the player if a video is playing when closing the dialog
+	        	try { 
+	        		var p = jwplayer("videoPlayer");
+	        		if (p) { p.stop();}
+	        	} catch (e) { } 
+	        }
+	        	
+	    });
+	   }
+
+});]]></xp:this.value>
+	</xp:scriptBlock>
+
+</xp:view>

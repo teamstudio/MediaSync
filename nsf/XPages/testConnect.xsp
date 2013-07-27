@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:button value="test" id="button1">
+	
+	<xp:eventHandler event="onclick" submit="true"
+									refreshMode="complete">
+									<xp:this.action><![CDATA[#{javascript:syncBean.connectionTest()}]]></xp:this.action>
+								</xp:eventHandler>
+	
+	</xp:button>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xc:ccDebugToolbar defaultCollapsed="false" collapseTo="left"></xc:ccDebugToolbar>
+</xp:view>

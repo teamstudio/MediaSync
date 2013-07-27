@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docFolder" formName="fFolder"
+			action="openDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:this.resources>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+
+			<unp:unpHorizontalView xp:key="facet_1"
+				dialogxpage="UnpDemoHorizontalViewDialog" sourcediv="results"
+				primaryview="unpFilesByFolder" filterview="unpFilesFilter"
+				toplevelcategory="#{docFolder.id}" title="#{docFolder.title}"
+				subtitle="#{docFolder.description}">
+			</unp:unpHorizontalView>
+			
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+
+</xp:view>

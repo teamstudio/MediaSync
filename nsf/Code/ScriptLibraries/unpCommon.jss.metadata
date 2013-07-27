@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="4ea" sequence="7" unid="56ED958D7D03FC38C1257B8F004F1851">
+<created><datetime dst="true">20130619T162355,69+02</datetime></created>
+<modified><datetime dst="true">20130725T121354,09+02</datetime></modified>
+<revised><datetime dst="true">20130725T112819,15+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130725T121354,09+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130619T162355,73+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE" sign="true"><text>unpCommon</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+<item name="$Class"><text>Unplugged Controls (1.6)</text></item>
+<item name="$Flags"><text>.5834Q</text></item></note>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="5f2" sequence="12" unid="A9FF0BEFF7A19361C1257B90003691AE">
+<created><datetime dst="true">20130620T115602,38+02</datetime></created>
+<modified><datetime dst="true">20130725T121354,49+02</datetime></modified>
+<revised><datetime dst="true">20130725T113603,45+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130725T121354,49+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130620T115602,39+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE"><text>unpTabbedFooter.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>unpTabbedFooter.xsp</text></item>
+
+
+
+
+
+<item name="$Class"><text>Unplugged Controls (1.6)</text></item>
+<item name="$Flags"><text>gC~4;</text></item></note>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<ul class="nav nav-list">
+		
+		<li>
+			<xp:link escape="true" text="Users" id="link6">
+									<i class="icon-user"></i>
+
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="partial" refreshId="dynamicContent1">
+										<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("unpUsers")}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+		</li>
+		<li>
+			<xp:link escape="true" text="Devices" id="link8">
+				<i class="icon-mobile-phone"></i>
+
+				<xp:eventHandler event="onclick"
+					submit="true" refreshMode="partial" refreshId="dynamicContent1">
+					<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("unpDevices")}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:link>
+		</li>
+				
+		<li>
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-archive"></i>
+				<span>Apps</span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+			
+			<ul class="submenu">
+				<li>
+					<xp:link escape="true" text="MediaSync" id="link1">
+						<i class="icon-double-angle-right"></i>
+
+						<xp:eventHandler event="onclick"
+							submit="true" refreshMode="partial" refreshId="dynamicContent1">
+							<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder")}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:link>
+				</li>
+				<li>
+					<xp:link escape="true" text="App 2" id="link10">
+						<i class="icon-double-angle-right"></i>
+
+						<xp:eventHandler event="onclick"
+							submit="true" refreshMode="partial" refreshId="dynamicContent1">
+							<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder")}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:link>
+				</li>
+				<li>
+					<xp:link escape="true" text="App 3" id="link11">
+						<i class="icon-double-angle-right"></i>
+
+						<xp:eventHandler event="onclick"
+							submit="true" refreshMode="partial" refreshId="dynamicContent1">
+							<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder")}]]></xp:this.action>
+						</xp:eventHandler>
+					</xp:link>
+				</li>
+			</ul>
+		</li>
+		
+		<li>
+						<a href="index.html">
+							<i class="icon-folder-close"></i>
+							<span>Profiles</span>
+						</a>
+					</li>
+					
+				
+					<li>
+
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-link"></i>
+							<span>Connectors</span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+						
+						<ul class="submenu">
+							<li>
+								<xp:link escape="true" text="IBM Connections" id="link7">
+									<i class="icon-double-angle-right"></i>
+
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="partial" refreshId="dynamicContent1">
+										<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder")}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</li>
+							<li>
+								<xp:link escape="true" text="Alfresco" id="link9">
+									<i class="icon-double-angle-right"></i>
+
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="partial" refreshId="dynamicContent1">
+										<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("folder")}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</li>
+						</ul>
+						
+					</li>
+					
+					<li>
+						<a href="index.html">
+							<i class="icon-dashboard"></i>
+							<span>Controls</span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="index.html">
+							<i class="icon-edit"></i>
+							<span>Logs</span>
+						</a>
+					</li>
+					
+					<li>
+					<!-- configurations -->
+						<xp:link text="Configuration" id="button1">
+							<i class="icon-cogs" />
+							
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" immediate="true" refreshId="dynamicContent1">
+								<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("configurations")}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</li>
+					
+					
+
+				</ul><!--/.nav-list-->
+
+
+</xp:view>

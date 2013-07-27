@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='fCommunity' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B8A0052617C'
+ hide='web' publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='1ce' unid='70C3E167D1C97CFFC1257A84005015C0' sequence='6'>
+<created><datetime dst='true'>20120925T163444,48+02</datetime></created>
+<modified><datetime dst='true'>20130614T173045,23+02</datetime></modified>
+<revised><datetime dst='true'>20120927T154517,97+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130614T173045,23+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,23+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<table widthtype='fixedleft' refwidth='8.0549in'><tablecolumn width='1.9521in'/><tablecolumn
+ width='6.1028in'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'><run><font size='9pt' style='bold'/>title:</run></par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'><run><font size='9pt'/><field type='text' kind='editable' name='title'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>description:</run><run><font
+ size='9pt'/>	</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/><field type='text' kind='editable' name='description'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'
+ style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>id:</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/><field type='text' kind='editable' name='id'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow></table>
+<pardef id='2' firstlineleftmargin='1in'/>
+<par def='2'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>fCommunity</text></item></form>
+

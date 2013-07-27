@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:styleSheet href="/unplugged-light.css"></xp:styleSheet>
+		<xp:styleSheet href="/unplugged-mediasync.css"></xp:styleSheet>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpMediaSync.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpMediaSyncJS.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript://enable workaround to play videos
+	session.setEnvironmentVar("unp.debug.workaround-video", "1", true);
+
+//for this prototype we mark all files in the app as being local (except a few)
+//TODO: Make this dynamic based on the files that are in fact local (requires Unplugged vNext)
+
+var d = $A(@Trim(@DbColumn(@DbName(), "unpFilesByFolder", 8)));	//unique list of unids of all files in the system
+
+dBar.debug("set downloaded for : " + d.length);
+
+sessionScope.downloaded = d}]]></xp:this.beforePageLoad>
+	<unp:unpHeader search="database" searchPage="UnpMediaSearch.xsp"
+		viewsButton="false" appDescription="MediaSync" appVersion="0.1"
+		title="MediaSync">
+	</unp:unpHeader>
+
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:getMenuOptionsHierchical();}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed>
+	
+	<div id="content">
+	
+		<unp:unpScrollableArea>
+			<xp:this.facets>
+				<unp:unpHorizontalView xp:key="facet_1"
+					dialogxpage="UnpDemoHorizontalViewDialog" sourcediv="results"
+					primaryview="unpFilesByFolder" filterview="unpFilesFilter"
+					toplevelcategory="All" title="Media Library"
+					subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu tellus, ullamcorper et tortor commodo, volutpat facilisis arcu. Donec eleifend nisl sed erat scelerisque sollicitudin.">
+				</unp:unpHorizontalView>
+			</xp:this.facets>
+		</unp:unpScrollableArea>
+	</div>
+	
+	<unp:unpTabbedFooter synctype="currentdb">
+		<unp:this.tab>
+			<unp:tab label="Library" page="/UnpMain.xsp"
+				icon="unp/icon-library.png" iconselected="unp/icon-library.png">
+			</unp:tab>
+			<unp:tab label="Favorites"
+				page="/UnpFavorites.xsp"
+				icon="unp/icon-favorite.png" iconselected="unp/icon-favorite.png">
+			</unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
+	
+	
+
+</xp:view>

@@ -1,0 +1,97 @@
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	
+	<!-- Ace: bootstrap -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/bootstrap.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/bootstrap-responsive.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/font-awesome.min.css</href>
+	</resource>
+	
+	<!-- Ace: fonts -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>https://fonts.googleapis.com/css?family=Open+Sans:400,300</href>
+	</resource>
+	
+	<!-- Ace: other styles -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/ace.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/ace-responsive.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>assets/css/ace-skins.min.css</href>
+	</resource>
+	
+	
+	<!-- jquery -->
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>jquery/jquery-1.8.2.min.js</href>
+	</resource>
+	
+	<!--basic scripts-->
+<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>assets/js/bootstrap.min.js</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>assets/js/ace-elements.min.js</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>assets/js/ace.min.js</href>
+	</resource>
+	
+	<!-- load custom stylesheet -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>mediasync.css</href>
+	</resource>
+	
+	<control>
+		<name>ViewRoot</name>
+		
+		<!-- set default page title -->
+		<property>
+			<name>pageTitle</name>
+			<value>MediaSync</value>
+		</property>
+	
+  		<property>
+			<name>pageIcon</name>
+			<value>/favicon.ico</value>
+		</property>
+	</control>
+	
+	<!-- control page visibility (not for single page lists) -->
+	<control>
+		<name>Pager</name>
+		<property>
+		<name>rendered</name>
+		<value>#{javascript:isPagerVisible(this)}</value> 
+		</property>
+	</control>
+	
+	<!-- default class on buttons -->
+	<control>
+		<name>Button.Command</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>btn</value>
+		</property>
+	</control>	
+	
+</theme>

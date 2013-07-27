@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257B8A0052617C" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1e2" sequence="29" unid="8139479FFEFC6F35C1257A54006D746E">
+<created><datetime dst="true">20120808T215532,30+02</datetime></created>
+<modified><datetime dst="true">20130618T112745,11+02</datetime></modified>
+<revised><datetime dst="true">20130618T112745,10+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130618T112745,11+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130614T173045,34+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+
+<item name="$Comment" sign="true"><text>Progressbar</text></item>
+<item name="$TITLE" sign="true"><text>xProgress.js</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item></note>

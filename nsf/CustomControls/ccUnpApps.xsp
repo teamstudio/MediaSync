@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	<xe:dataView id="dataView1" columnTitles="true"
+		collapsibleDetail="true" collapsibleRows="true"
+		expandedDetail="true">
+		
+		<xe:this.data>
+			<xp:dominoView var="view1" viewName="Applications">
+				<xp:this.databaseName><![CDATA[#{javascript:"unplugged.nsf"}]]></xp:this.databaseName>
+			</xp:dominoView>
+		</xe:this.data>
+
+
+	</xe:dataView>
+
+</xp:view>

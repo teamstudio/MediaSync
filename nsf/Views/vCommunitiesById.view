@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='vCommunitiesById' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='16e' unid='4BB86FEB29232C7FC1257A8400501198' sequence='8'>
+<created><datetime dst='true'>20120925T163433,84+02</datetime></created>
+<modified><datetime dst='true'>20130703T100811,08+02</datetime></modified>
+<revised><datetime dst='true'>20130703T100811,07+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T100811,08+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173044,70+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form = "fCommunity"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='id' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='id'><font size='9pt' style='bold'/></columnheader></column></view>
+

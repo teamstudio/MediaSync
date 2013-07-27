@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='unpFilesFilter' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='616' unid='72A4D951E844CDE6C1257B90004589BE' sequence='7'>
+<created><datetime dst='true'>20130620T143932,46+02</datetime></created>
+<modified><datetime dst='true'>20130703T100814,03+02</datetime></modified>
+<revised><datetime dst='true'>20130703T100814,02+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T100814,03+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130620T143933,62+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form="fFileMetadata"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='filtercategories'
+ width='10' resizable='true' separatemultiplevalues='true' sortnoaccent='false'
+ sortnocase='true' showaslinks='false' categorized='true'><columnheader title='Filter'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='Title' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='Title'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='TAGS' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Tags'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='attachmentUrl' width='73.2500' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='AttachmentURL'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='type' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='DocType'><font size='9pt' style='bold'/></columnheader></column></view>
+

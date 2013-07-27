@@ -1,0 +1,23 @@
+/*updated logo*/
+.companyLogo {
+	max-width: 200px;
+}
+
+/*overflow on filenames in the horizontal scroller*/
+.hviewtitle, #hviewmetadata {
+	overflow: hidden;	
+	text-overflow: ellipsis;
+}
+/*layout for badges in horizontal scroller*/
+.hviewicon .badge-favorite {
+	margin-left: -8px;
+	padding-left: 3px;
+	padding-right: 0;
+	margin-top: -4px	
+}
+.hviewicon .badge-downloaded {
+	padding-right: 0;
+	margin-right: -12px;
+	margin-top: -4px
+}
+

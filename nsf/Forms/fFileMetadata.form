@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='fFileMetadata' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257B8A0052617C' hide='web' nocompose='true' publicaccess='false'
+ designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='1fe' unid='76D18A31C9E05D32C1257A4B00342230' sequence='48'>
+<created><datetime dst='true'>20120730T112926,24+02</datetime></created>
+<modified><datetime dst='true'>20130703T103723,00+02</datetime></modified>
+<revised><datetime dst='true'>20130703T103722,99+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T103723,00+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130614T173045,49+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='windowtitle'><formula
+>"File: " + title</formula></code>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'><run><font size='9pt' style='bold'/></run></par>
+<table widthtype='fixedleft' refwidth='9.1375in'><tablecolumn width='1.5590in'/><tablecolumn
+ width='4.0354in'/><tablecolumn width='3.5431in'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'><run><font size='9pt' style='bold'/>id</run></par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='id'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='7' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<pardef id='5' keepwithnext='true' keeptogether='true'/>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>title</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='title'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>title of this file (=filename - extension)</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>description:</run><run><font
+ size='9pt'/>	</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='description'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>type</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='type'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>Type of this file. This determines the icon shown.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>fileId</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='fileId'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>cnxUpdated</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='number'
+ kind='editable' name='cnxUpdated'><numberformat format='general' digits='2'
+ punctuated='false' parens='false' percent='false' bytes='false'/></field></run><run
+><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>tags</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' allowmultivalues='true' kind='editable' name='tags' listinputseparators='comma semicolon'
+ listdisplayseparator='semicolon'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>category</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='category'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>Category. One of:</run></par>
+<par def='5'><run><font size='9pt'/>- Brochures</run></par>
+<par def='5'><run><font size='9pt'/>- Datasheets</run></par>
+<par def='5'><run><font size='9pt'/>- Videos</run></par>
+<par def='5'><run><font size='9pt'/>- Presentations</run></par>
+<par def='5'><run><font size='9pt'/>- Other</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>year</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' allowmultivalues='true' kind='editable' name='year' listinputseparators='comma semicolon'
+ listdisplayseparator='semicolon'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>language</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/><field type='text' allowmultivalues='true'
+ kind='editable' name='language' listinputseparators='comma semicolon' listdisplayseparator='semicolon'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>attachmentName</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/><field type='text' kind='editable' name='attachmentName'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>attachmentSize</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='number' kind='editable' name='attachmentSize'><numberformat format='general'
+ digits='2' punctuated='false' parens='false' percent='false' bytes='false'/></field></run><run
+><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>attachmentUrl</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='attachmentUrl'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>syntax: unid/$file/filename</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>attachmentUrlExt</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='attachmentUrlExt'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'
+ style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>status</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='status'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>n/a</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>folderId</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='folderId'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>id of the folder containing this folder</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>folderTree</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='8pt'/><field
+ type='text' allowmultivalues='true' kind='editable' name='folderTree' listinputseparators='newline'
+ listdisplayseparator='newline'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt' style='bold'/> </run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>isMediaFile</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='isMediaFile'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>("true" for files uploaded in the media gallery)</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>communityId</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='communityId'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>(communityId for media files)</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>thumbnails</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='richtext'
+ kind='editable' name='thumbnails'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>n/a</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>thumbnailFileName</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='thumbnailFileName'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>n/a</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt'/>for personal files :</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>author</run><run><font size='9pt'
+ style='bold'/>:</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='authors'
+ kind='editable' name='author'/></run><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>linkEdit:</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='linkEdit'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow></table>
+<par def='1'><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/></run></par>
+<par def='1'><field type='text' allowmultivalues='true' kind='computed' name='filtercategories'
+ listinputseparators='comma semicolon' listdisplayseparator='semicolon'><code
+ event='defaultvalue'><formula>year : language : (language + "~" + year) *+ "~" *+ (("All") + "~" + Category)</formula></code></field><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'><field type='text' kind='editable' name='isLocal'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata> (true/ false if the file is a local file - causes the 'airplane' indicator on the mobile ui)</par></richtext></body>
+<item name='$XPageAlt'><text>file.xsp</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>fBookmark</text></item>
+<item name='attachmentSize' summary='false'><number>0</number></item>
+<item name='cnxUpdated' summary='false'><number>0</number></item></form>
+

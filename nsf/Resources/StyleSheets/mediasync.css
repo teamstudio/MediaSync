@@ -1,0 +1,177 @@
+#wrapper {
+	width: 100%;
+	position: absolute;
+	z-index: 50;
+}
+#container {
+	position: relative;
+	margin: 20px auto;
+	width: 974px;
+}
+
+#top_trans {
+	height: 31px;
+	background: url(des_top_trans.png) no-repeat;
+}
+#main_trans {
+	background: url(des_main_trans.png);
+}
+#bot_trans {
+	background: url(des_bot_trans.png) no-repeat;
+	height: 44px;
+}
+
+#top_trans_2 {
+	height: 31px;
+	background: url(des_top_2.png) no-repeat;
+}
+#main_trans_2 {
+	background: url(des_main_2.png);
+	padding: 0 16px 17px 16px;
+	/*line-height: 18px;*/
+}
+#bot_trans_2 {
+	background: url(des_bot_2.png) no-repeat;
+	height: 43px;
+}
+
+#nav_top {
+	/*font-size: 14px;*/
+	height: 89px;
+}
+
+.right {
+	float: right;
+	width: auto;	
+}
+.left {
+	float: left;
+	width:auto;	
+}
+.clear {
+	clear: left;
+	height: 1px;
+	font-size: 1px;
+}
+
+
+/* end biotronik */
+
+.lotusForm {
+	background: none;	
+}
+
+
+tr {
+	vertical-align: top;	
+}
+
+.lotusContent {
+	padding: 20px 15px 15px 15px !important;	
+	background-color: inherit;
+}
+
+.xspPanelViewColumnHeader, .lotusTable th {
+	font-size: 0.9em;
+	font-weight: bold !important;
+	color: #444444;
+	padding: 4px 2px 2px 0;
+	white-space: nowrap;
+} 
+
+.headerBar {
+	position: relative;
+	padding: 10px; 
+	font-size: 0.9em;
+}
+
+
+/* padding on images in buttons */
+.dijitButton img {
+	padding-right: 3px; 
+}
+
+/* no left padding on message box */
+.lotusMessage span {
+	margin-left: 0;
+}
+
+/*rows in views*/
+.evenRow {
+
+}
+.oddRow {
+	background: #F9F9F9;
+}
+
+.xspDataTableViewPanelFooterStart, .xspDataTableViewPanelFooterMiddle, .xspDataTableViewPanelFooterEnd {
+	display: none;
+}
+
+table.form {
+	
+}
+table.form td {
+	padding: 4px 10px 4px 0;
+}
+table.form p {
+  margin: 0;
+}
+table.form td.buttons {
+ padding-top: 20px;
+}
+
+.xspDataTableFileDownload td {
+	padding-right: 7px !important;
+}
+
+/*media gallery styles*/
+.galleryItem {
+	float:left;
+	margin: 5px 8px 0 0; 
+	padding: 5px; 
+	border: 1px solid silver;
+}
+.galleryItem .imgContainer {
+	width: 120px;
+	height: 120px;	
+	text-align: center;
+	margin-bottom: 3px;
+}
+.galleryItem .imgContainer img {
+	vertical-align: middle;
+}
+
+.galleryItem img.thumb {
+	width: 100px;
+	height: 100px;	
+}
+
+/* icons for file types - copied from Unplugged version*/
+.hviewicon {
+  width: 52px;
+  height: 62px;
+  background-repeat: no-repeat;
+  background-image: url('unp/mediasync-documents.png');
+  zoom:0.4;
+   -moz-transform:scale(0.4);
+    -moz-transform-origin: 0 0;
+}
+.hviewicon.icon-docx {
+  background-position: 0px 0px;
+}
+.hviewicon.icon-pdf {
+  background-position: -52px 0px;
+}
+.hviewicon.icon-xlsx {
+  background-position: -104px 0px;
+}
+.hviewicon.icon-pptx {
+  background-position: -156px 0px;
+}
+.hviewicon.icon-mov {
+  background-position: -208px 0px;
+}
+.hviewicon.icon-jpg {
+  background-position: -260px 0px;
+}

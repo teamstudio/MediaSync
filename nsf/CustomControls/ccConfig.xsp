@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docConfig" formName="fConfig"
+			action="editDocument" >
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+				<xp:aclEntry type="ROLE" right="EDITOR">
+					<xp:this.name><![CDATA[[admin]]]></xp:this.name>
+				</xp:aclEntry>
+				<xp:aclEntry type="DEFAULT" name="-Default-"
+					right="NOACCESS">
+				</xp:aclEntry>
+			</xp:this.entries>
+		</xp:acl>
+	</xp:this.acl>
+	
+
+				<xp:table styleClass="form">
+					<xp:tr>
+						<xp:td>
+							<xp:label value="IBM Connections server url *:"
+								id="connectionsServerUrl_Label1" for="connectionsServerUrl1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.connectionsServerUrl}"
+								id="connectionsServerUrl1" style="width:200px"
+								required="true">
+							<xp:this.validators>
+								<xp:validateRequired
+									message="Enter the IBM Connections server url.">
+								</xp:validateRequired>
+							</xp:this.validators></xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Server description *:"
+								id="label1" for="connectionsServerDesc">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.connectionsServerDescription}"
+								id="connectionsServerDesc" style="width:200px">
+								<xp:this.validators>
+								<xp:validateRequired
+									message="Enter a description for the IBM Connections server.">
+								</xp:validateRequired>
+							</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Community Id *:"
+								id="label5" for="inputUser">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.connectionsCommunityId}"
+								id="inputText2" style="width:200px">
+								<xp:this.validators>
+								<xp:validateRequired
+									message="Enter the id of the community to use to synchronize with">
+								</xp:validateRequired>
+							</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Library root folder:"
+								id="label6" for="inputRootFolder">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.libraryRootFolder}"
+								id="inputRootFolder" style="width:200px">
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Connections bind username *:"
+								id="label3" for="inputUser">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.connectionsBindUsername}"
+								id="inputUser" style="width:200px">
+								<xp:this.validators>
+								<xp:validateRequired
+									message="Enter a username for the bind user.">
+								</xp:validateRequired>
+							</xp:this.validators>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Connections bind password *:"
+								id="label4" for="inputPassword">
+							</xp:label>
+						</xp:td>
+						<xp:td id="editPassword">
+						
+							<xp:link escape="true" id="link2"
+								text="change" >
+								<xp:this.rendered><![CDATA[#{javascript:docConfig.isEditable() && !docConfig.isNewNote() && !viewScope.editPassword}]]></xp:this.rendered>
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="editPassword" immediate="true">
+									<xp:this.action><![CDATA[#{javascript:viewScope.editPassword = true;}]]></xp:this.action>
+									<xp:this.onComplete><![CDATA[dojo.query('input[id$="inputPassword"]')[0].focus();]]></xp:this.onComplete>
+									
+								</xp:eventHandler></xp:link>
+						
+							<xp:inputText
+								value="#{docConfig.connectionsBindPassword}" id="inputPassword"
+								style="width:200px" password="true" required="true">
+								<xp:this.rendered><![CDATA[#{javascript:docConfig.isNewNote() || (viewScope.editPassword && docConfig.isEditable() )}]]></xp:this.rendered>
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Enter a password for the Connections bind user.">
+									</xp:validateRequired>
+								</xp:this.validators>
+							</xp:inputText>
+								
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							<xp:label value="Temporary file location (on server) *:"
+								id="label2" for="inputText1">
+							</xp:label>
+						</xp:td>
+						<xp:td>
+							<xp:inputText
+								value="#{docConfig.tempFolder}" id="inputText1"
+								style="width:200px">
+								<xp:this.validators>
+									<xp:validateRequired
+										message="Enter a folder to temporary store downloaded files on the server.">
+									</xp:validateRequired>
+								</xp:this.validators>
+								<xp:this.defaultValue><![CDATA[#{javascript:"c:\\lotus\\domino\\data\\temp\\"}]]></xp:this.defaultValue>
+							</xp:inputText>
+						</xp:td>
+					</xp:tr>
+					
+					<xp:tr styleClass="lotusFormRow">
+						<xp:td>
+							</xp:td>
+						<xp:td>
+						
+							<xp:checkBox text=""
+								id="checkBox1" value="#{docConfig.isActive}" checkedValue="true"
+								uncheckedValue="false">
+							</xp:checkBox>
+							<span class="lbl">Active configuration</span>
+
+						</xp:td>
+					</xp:tr>
+					
+					
+					<xp:tr>
+						<xp:td colspan="2">
+						<xp:button value="Save" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="dynamicContent1">
+						<xp:this.action><![CDATA[#{javascript:
+						var doc:NotesDocument = docConfig.getDocument();
+						
+						if ( !docConfig.hasItem("id") ) {
+							docConfig.replaceItemValue("id", @Unique() );
+						}
+						
+						doc.replaceItemValue("docAuthors", "[admin]").setAuthors(true);
+						docConfig.save();
+						
+						//make sure that only 1 config is active
+						if (docConfig.getItemValueString("isActive") == "true") {
+							var dc = database.search("Form=\"fConfig\" & isActive=\"true\" & @Text(@DocumentUniqueId) != \"" + doc.getUniversalID() + "\"");
+							dBar.debug("found " + dc.getCount() + " active config documents");
+							if (dc.getCount() > 0)  {
+								dc.stampAll("isActive", "false");
+							}
+						}
+
+//reload application config
+loadAppConfig(true);
+
+getComponent("dynamicContent1").show("configurations")}]]></xp:this.action>
+					</xp:eventHandler>
+						</xp:button>
+				
+						<xp:link escape="true" text="Cancel"
+							id="link1">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" immediate="true" refreshId="dynamicContent1">
+								<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("configurations")}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+
+						</xp:td>
+					</xp:tr>
+				</xp:table>
+				
+	<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[try {
+	dojo.byId("#{id:connectionsServerUrl1}").focus();
+} catch (e) {}]]></xp:this.script>
+	</xp:eventHandler>
+
+
+</xp:view>
